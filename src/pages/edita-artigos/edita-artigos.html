@@ -1,0 +1,52 @@
+<!--
+  Generated template for the EditaArtigosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngFor="let artigo of artigos">
+      {{artigo.Artigo}}
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closePage()">Fechar</button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list *ngFor="let artigo of artigos">
+      <ion-item>
+        <ion-label color="primary">Artigo</ion-label>
+        <ion-input [(ngModel)]="artigo.Artigo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Descricao</ion-label>
+        <ion-input [(ngModel)]="artigo.Descricao"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Caracteristicas</ion-label>
+        <ion-input [(ngModel)]="artigo.Caracteristicas"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">IVA</ion-label>
+        <ion-input [(ngModel)]="artigo.IVA"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Peso</ion-label>
+        <ion-input [(ngModel)]="artigo.Peso"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Volume</ion-label>
+        <ion-input [(ngModel)]="artigo.Volume"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary">Marca</ion-label>
+        <ion-input [(ngModel)]="artigo.Marca"></ion-input>
+      </ion-item>
+      <button ion-button type="submit">Atualizar</button>
+    </ion-list>
+  </ion-card>
+</ion-content>

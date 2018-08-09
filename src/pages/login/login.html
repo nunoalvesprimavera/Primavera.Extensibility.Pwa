@@ -1,0 +1,59 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-content padding>
+  <ion-grid style="height: 100%">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-slides pager class="swiper-no-swiping">
+            <ion-slide>
+              <h1>Bem-vindo</h1>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit">
+                <ion-list>
+                  <ion-item>
+                    <ion-label>Username</ion-label>
+                    <ion-input formControlName="username" [(ngModel)]="user" type="text"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="loginForm.controls.username.hasError('required') && loginForm.controls.username.touched">
+                    <sup ion-text color="danger">Por favor introduza o seu username</sup>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Password</ion-label>
+                    <ion-input formControlName="password" [(ngModel)]="pass" type="password"></ion-input>
+                  </ion-item>
+                  <ion-item *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.touched">
+                    <sup ion-text color="danger">Por favor introduza a sua passoword</sup>
+                  </ion-item>
+                </ion-list>
+                <ion-item padding>
+                  <button ion-button type="submit" (click)="login()" item-right>
+                    <ion-icon name="arrow-round-forward"></ion-icon>
+                  </button>
+                </ion-item>
+              </form>
+            </ion-slide>
+            <ion-slide>
+              <h1>Escolha a sua empresa</h1>
+              <form (ngSubmit)="onSubmit">
+                <ion-list>
+                  <ion-item>
+                    <ion-select [(ngModel)]="companyModel" name="companyModel">
+                      <ion-option *ngFor="let company of companies" value="{{company.Codigo}}" selected>{{company.Codigo}}</ion-option>
+                    </ion-select>
+                  </ion-item>
+                  <div padding>
+                    <button ion-button block type="submit" (click)="loginApp()">Ok</button>
+                  </div>
+                </ion-list>
+              </form>
+            </ion-slide>
+          </ion-slides>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>
