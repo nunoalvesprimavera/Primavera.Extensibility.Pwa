@@ -23,11 +23,12 @@ export class ArtigosPage {
               public authService: AuthServiceProvider) {
     this.getBaseArtigos() 
   }
-  // ionViewCanEnter() {
-  //   if(this.authService.authenticated() == true){
-  //     return true
-  //   } 
-  //  }
+  ionViewCanEnter(): boolean {
+    if(this.authService.authenticated()) {
+      return true; // You are allowed to enter
+    }   
+    return false;
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ArtigosPage');
     this.getBaseArtigos()

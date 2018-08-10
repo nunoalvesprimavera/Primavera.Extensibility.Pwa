@@ -23,7 +23,9 @@
                   </ion-item>
                   <ion-item>
                     <ion-label>Password</ion-label>
-                    <ion-input formControlName="password" [(ngModel)]="pass" type="password"></ion-input>
+                    <ion-input formControlName="password" [(ngModel)]="pass" [type]="passwordType"></ion-input>
+                    <ion-icon name="eye" *ngIf="passwordShown" item-end (click)="togglePassword()"></ion-icon>
+                    <ion-icon name="eye-off" *ngIf="!passwordShown" item-end (click)="togglePassword()"></ion-icon>
                   </ion-item>
                   <ion-item *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.touched">
                     <sup ion-text color="danger">Por favor introduza a sua passoword</sup>

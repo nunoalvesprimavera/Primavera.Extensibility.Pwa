@@ -40,15 +40,15 @@ export class MenuPage {
 
   }
 
-  ionViewCanEnter(): boolean {
-    if(this.authService.authenticated()) {
-      return true; // You are allowed to enter
-    }   
-    return false;
-  }
+  // ionViewCanEnter(): boolean {
+  //   if(this.authService.authenticated()) {
+  //     return true; // You are allowed to enter
+  //   }   
+  //   return false;
+  // }
 
   ionViewDidLoad() {
-    console.log(this.authService.authenticated())
+    // console.log(this.authService.authenticated())
     console.log('ionViewDidLoad MenuPage')
   }
 

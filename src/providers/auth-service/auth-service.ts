@@ -15,14 +15,14 @@ export class AuthServiceProvider {
   }
 
   // Login a user
-  login() : boolean {
-    return this.isLoggedIn = true;
+  login() : void {
+    this.isLoggedIn = true;
   }
  
   // Logout a user, destroy token and remove
   // every information related to a user
-  logout() : boolean{
-    return this.isLoggedIn = false;
+  logout() : void{
+    this.isLoggedIn = false;
   }
  
   // Returns whether the user is currently authenticated

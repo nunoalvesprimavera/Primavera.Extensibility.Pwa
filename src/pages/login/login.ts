@@ -16,15 +16,16 @@ import { LoginProvider } from '../../providers/login/login';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  loginForm: FormGroup
-  username: AbstractControl
-  password: AbstractControl
-  user: string
-  pass: string
-  company: string = ''
-  companies: any
-  companyModel: any
-
+  loginForm: FormGroup;
+  username: AbstractControl;
+  password: AbstractControl;
+  user: string;
+  pass: string;
+  company: string = '';
+  companies: any;
+  companyModel: any;
+  passwordType: string = 'password';
+  passwordShown: boolean = false;
   @ViewChild(Slides) slider: Slides;
 
   constructor(public navCtrl: NavController,
@@ -44,6 +45,16 @@ export class LoginPage {
 
     this.username = this.loginForm.controls['username']
     this.password = this.loginForm.controls['password']
+  }
+
+  togglePassword(){
+    if(this.passwordShown){
+      this.passwordShown = false;
+      this.passwordType = 'password'
+    } else {
+      this.passwordShown = true;
+      this.passwordType = 'text'
+    }
   }
 
   ionViewDidLoad() {
